@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-typede struct listint_s
+typedef struct listint_s
 {
 	int n;
 	struct listint_s *next;
