@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
-
-    from calculator_i import add, sub, mul, div
+    """print sum diff div mul"""
+    from calculator_i.py import add, sub, mul, div
 
     a = 10
     b = 5
