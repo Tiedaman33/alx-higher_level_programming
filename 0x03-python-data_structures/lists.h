@@ -1,4 +1,8 @@
 #include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <Python.h>
+
 #ifndef LISTS_H
 #define LISTS_H
 
