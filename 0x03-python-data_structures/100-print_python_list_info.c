@@ -1,7 +1,8 @@
 #include "lists.h"
+#include "Python.h"
 /**
  * print_python_list_info - function that prints some basic info.
- * @: python list
+ * @p: python list
  */
 void print_python_list_info(PyObject *p)
 {
