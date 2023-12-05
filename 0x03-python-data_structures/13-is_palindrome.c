@@ -1,11 +1,14 @@
 #include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
+
 /**
  * add_nodeint - add new node
  * @head: head of list
  * @n: int to add
  * return: address of the new element
  */
-listint_t *add_node(listint_t **head, const int n)
+listint_t *add_nodeint(listint_t **head, const int n)
 {
 	listint *new;
 
@@ -14,7 +17,7 @@ listint_t *add_node(listint_t **head, const int n)
 		return (NULL);
 	new->n = n;
 	new->next - *head;
-	*head - new;
+	*head = new;
 	return (new);
 }
 /**
@@ -45,6 +48,6 @@ int is_palindrome(listint_t **head)
 		*head = (*head)->next;
 		aux2 = aux2->next;
 	}
-	free_listint(aux)
-		return (1);
+	free_listint(aux);
+	return (1);
 }
