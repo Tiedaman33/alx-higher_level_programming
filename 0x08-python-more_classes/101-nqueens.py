@@ -40,7 +40,7 @@ def get_solution(board):
     """Return the list of lists representation of a sloved chessboard."""
     solution = []
     for r in range(len(board)):
-        for r in range(len(board)):
+        for c in range(len(board)):
             if board[r][c] == "Q":
                 solution.append([r, c])
                 break
@@ -85,7 +85,7 @@ def xout(board, row, col):
         c -= 1
     # X out all spots diagonally up to the right
     c = col + 1
-    for r in range(row, -1, -1, -1):
+    for r in range(row - 1, -1, -1):
         if c >= len(board):
             break
         board[r][c] = "x"
@@ -96,7 +96,7 @@ def xout(board, row, col):
         if c <= 0:
             break
         board[r][c] = "x"
-         c -= 1
+        c -= 1
 
 
 def recursive_solve(board, row, queens, solutions):
@@ -111,8 +111,8 @@ def recursive_solve(board, row, queens, solutions):
         solutions
     """
     if queens == len(board):
-        solutions.append(get_solution(board)):
-            return (solutions)
+        solutions.append(get_solution(board))
+        return (solutions)
 
     for c in range(len(board)):
         if board[row][c] == " ":
@@ -136,5 +136,5 @@ if __name__ == "__main__":
     board = init_board(int(sys.argv[1]))
     solutions = recursive_solve(board, 0, 0, [])
     for sol in solutions:
-    print(sol)
+        print(sol)
 
