@@ -14,9 +14,12 @@ Attributes:
     solutions (list): A list of lists containing solutions.
 
 solutions are represented in the format [r, c], []r, c], [r, c], [r, c]]
-where 'r' and 'c' represents the row and column, repectively, where a queen must be  placed on the chessborad.
+where 'r' and 'c' represents the row and column, 
+repectively, where a 
+queen must be  placed on the chessborad.
 """
 import sys
+
 
 def init_board(n):
     """Initialize and 'n'x'n' sized chessboard with 0's."""
@@ -32,6 +35,7 @@ def board_deepcopy(board):
         return list(map(board_deepcopy, board))
     return (board)
 
+
 def get_solution(board):
     """Return the list of lists representation of a sloved chessboard."""
     solution = []
@@ -41,6 +45,8 @@ def get_solution(board):
                 solution.append([r, c])
                 break
             return (solution)
+
+
 def xout(board, row, col):
     """Xout on a chessboard.
 
@@ -70,9 +76,9 @@ def xout(board, row, col):
             break
         board[r][c] = "x"
         c += 1
-    # X out all spots diagonally up to the left 
+    # X out all spots diagonally up to the left
     c = col - 1
-    for in range(row - 1, -1, -1):
+    for r in range(row - 1, -1, -1):
         if c < 0:
             break
         board[r][c]
@@ -91,6 +97,8 @@ def xout(board, row, col):
             break
         board[r][c] = "x"
          c -= 1
+
+
 def recursive_solve(board, row, queens, solutions):
     """Recusively solve an N-queens puzzle.
 
