@@ -93,7 +93,7 @@ def xout(board, row, col):
     # X out all spots diagnonally down to the left
     c = col - 1
     for r in range(row + 1, len(board)):
-        if c < = 0:
+        if c <= 0:
             break
         board[r][c] = "x"
          c -= 1
