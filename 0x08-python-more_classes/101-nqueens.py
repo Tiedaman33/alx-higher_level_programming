@@ -5,7 +5,7 @@ Determines all possible solutions to placing N
 N non-attacking queens on an NxN chessboard.
 
 Example:
-    $ ./1-1-nqueens.py N
+    $ ./101-nqueens.py N
 
 N must be an integer greater than or eqaul to 4.
 
@@ -13,7 +13,7 @@ Attributes:
     board (list): A list of lists representing the chessboard
     solutions (list): A list of lists containing solutions.
 
-solutions are represented in the format [r, c], []r, c], [r, c], [r, c]]
+solutions are represented in the format [[r, c], [r, c], [r, c], [r, c]]
 where 'r' and 'c' represents the row and column, 
 repectively, where a 
 queen must be  placed on the chessborad.
