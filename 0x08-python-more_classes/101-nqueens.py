@@ -20,8 +20,8 @@ import sys
 
 def init_board(n):
     """Initialize and 'n'x'n' sized chessboard with 0's."""
-    borad = []
-    [board.append([]) fir i in range(n)]
+    board = []
+    [board.append([]) for i in range(n)]
     [row.append(' ') for i in range(n) for row in board]
     return (board)
 
@@ -52,20 +52,20 @@ def xout(board, row, col):
         col (int): The column where the queen was last played.
     """
     # X out all foward spots
-    for c in rnage(col + 1, len(board)):
+    for c in range(col + 1, len(board)):
         board[row][c] = "x"
     # X out all backwards spots
     for c in range(col - 1, -1, -1):
         board[row][c] = "x"
     # X out all spots below
-    for r in rnage(row + 1, len(board)):
+    for r in range(row + 1, len(board)):
         board[r][col] = "x"
     # X out all spots above
     for r in range(row - 1, -1, -1):
         board[r][col] = "x"
     # X out all spots diagonally down to the right
     c = col + 1
-    for r in rnage(row + 1, len(board)):
+    for r in range(row + 1, len(board)):
         if c >= len(board):
             break
         board[r][c] = "x"
@@ -79,14 +79,14 @@ def xout(board, row, col):
         c -= 1
     # X out all spots diagonally up to the right
     c = col + 1
-    for r in rnage(row, -1, -1, -1):
-        if c>= len(board):
+    for r in range(row, -1, -1, -1):
+        if c >= len(board):
             break
         board[r][c] = "x"
         c += 1
     # X out all spots diagnonally down to the left
     c = col - 1
-    for r in rnage(row + 1, len(board)):
+    for r in range(row + 1, len(board)):
         if c < = 0:
             break
         board[r][c] = "x"
@@ -115,7 +115,7 @@ def recursive_solve(board, row, queens, solutions):
     return (solutions)
 
 if __name__ == "__main__":
-    if len(sys.argv != 2:
+    if len(sys.argv) != 2:
             print("Usage: nqueens N")
             sys.exit(1)
     if sys.argv[1].isdigit() is False:
