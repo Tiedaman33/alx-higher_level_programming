@@ -36,7 +36,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        if not isintance(value, int):
+        if not isinstance(value, int):
             raise TypeError("height must be >= 0")
         self.__height = value
 
@@ -53,7 +53,7 @@ class Rectangle:
         """return the printable representation of the rectangle.
         represents the rectangle with the # character
         """
-        if self.__widht == 0 or self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ("")
         rect = []
         for i in range(self.__height):
