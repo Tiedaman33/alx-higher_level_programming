@@ -124,8 +124,8 @@ def recursive_solve(board, row, queens, solutions):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-            print("Usage: nqueens N")
-            sys.exit(1)
+        print("Usage: nqueens N")
+        sys.exit(1)
     if sys.argv[1].isdigit() is False:
         print("N must be a number")
         sys.exit(1)
@@ -137,4 +137,3 @@ if __name__ == "__main__":
     solutions = recursive_solve(board, 0, 0, [])
     for sol in solutions:
         print(sol)
-
