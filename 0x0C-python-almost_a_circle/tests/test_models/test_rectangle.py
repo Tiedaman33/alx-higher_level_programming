@@ -462,7 +462,7 @@ class TestRectangle_stdout(unittest.TestCase):
         Returns:
             The text printed to stdout by calling method on sq.
         """
-        capture = io.stringIO()
+        capture = io.StringIO()
         sys.stdout = capture
         if method == "print":
             print(rect)
@@ -801,7 +801,7 @@ class TestRectangle_to_dictionary(unittest.TestCase):
     def test_to_dictionary_arg(self):
         r = Rectangle(10, 2, 4, 1, 2)
         with self.assertRaises(TypeError):
-            r.To_dictionary(1)
+            r.to_dictionary(1)
 
 if __name__ == "__main__":
     unittest.main()
