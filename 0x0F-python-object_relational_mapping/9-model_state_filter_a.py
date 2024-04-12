@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """script that lists all State objects from the database hbtn_0e_6_usa"""
 
-if __name__ == "__main__":
-
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 import sys
@@ -14,4 +12,4 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = Session()
     for instance in session.query(State).filter(State.name.like('%a%')):
-        print(instance.id, instance.name, sep="; ")
+        print(instance.id, instance.name, sep=": ")

@@ -9,7 +9,7 @@ if __name__ == "__main__":
     from model_state import Base, State
 
     inp = sys.argv
-    if len(inp) < 4;
+    if len(inp) < 4:
         exit(1)
     conn_str = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
     engine = create_engine(conn_str.format(inp[1], inp[2], inp[3]))

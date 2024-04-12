@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-import MYSQLdb
+import MySQLdb
 import sys
 
 if __name__ =="__main__":
-    db = MYSQL.connect(host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
     c = db.cursor()
     c.execute("""SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON states.id=cities.state.id""")
     rows = c.fetchall()
