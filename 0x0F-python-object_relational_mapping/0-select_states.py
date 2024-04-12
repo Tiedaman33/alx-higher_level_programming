@@ -1,5 +1,14 @@
 #!/usr/bin/python3
 
+"""
+script that lists all states from the database hbtn_0e_0_usa
+arguments:
+    mysql username
+    mysql password
+    database name
+connects to mysql on local host at port 3306
+"""
+
 import MySQLdb
 import sys
 
