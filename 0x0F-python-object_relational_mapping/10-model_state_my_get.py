@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-"""Script to print the State object with the name passed as argument from the database hbtn_0e_6_usa.
+"""Script to print the State object with the
+name passed as argument from the database hbtn_0e_6_usa.
 
 Args:
     username (str): The MySQL username.
@@ -12,7 +13,8 @@ Returns:
     None
 
 Usage:
-    Run this script with four arguments: username, password, database name, and state name to search.
+    Run this script with four arguments:
+    username, password, database name, and state name to search.
     For example: python3 script.py username password hbtn_0e_6_usa "New York"
 
 Requirements:

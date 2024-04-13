@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Script to list all State objects that contain the letter 'a' from the database hbtn_0e_6_usa.
+"""Script to list all State objects that
+contain the letter 'a' from the database hbtn_0e_6_usa.
 
 Args:
     username (str): The MySQL username.
@@ -10,7 +11,8 @@ Returns:
     None
 
 Usage:
-    Run this script with three arguments: username, password, and database name.
+    Run this script with three
+    arguments: username, password, and database name.
     For example: python3 script.py username password hbtn_0e_6_usa
 
 Requirements:
@@ -31,8 +33,8 @@ import sys
 from model_state import Base, State
 
 if __name__ == "__main__":
-    engine = create_engine ('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
