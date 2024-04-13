@@ -2,7 +2,8 @@
 """
 Improved version of relationship_state.py.
 
-Defines the State class with an additional relationship with the City class.
+Defines the State class with an
+additional relationship with the City class.
 
 Requirements:
     - SQLAlchemy module must be installed.

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script to delete all State objects with a name containing the letter 'a' from the database hbtn_0e_6_usa.
+Script to delete all State objects with a name
+containing the letter 'a' from the database hbtn_0e_6_usa.
 
 Usage:
     python script.py <mysql_username> <mysql_password> <database_name>
