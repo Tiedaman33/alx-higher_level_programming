@@ -41,7 +41,7 @@ if __name__ == "__main__":
             port=3306)
     c = db.cursor()
     c.execute("""SELECT cities.id, cities.name, states.name FROM cities
-              INNER JOIN states ON states.id=cities.state.id""")
+              INNER JOIN states ON states.id=cities.state_id""")
     rows = c.fetchall()
     for row in rows:
         print(row)
