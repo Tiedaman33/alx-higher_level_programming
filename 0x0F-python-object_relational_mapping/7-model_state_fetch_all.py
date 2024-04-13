@@ -1,5 +1,32 @@
 #!/usr/bin/python3
-"""script that lists all State objects from the database hbtn_0e_6_usa"""
+
+"""Script to retrieve and display all State
+objects from the hbtn_0e_6_usa database.
+
+Args:
+    username (str): The MySQL username.
+    password (str): The MySQL password.
+    db_name (str): The name of the MySQL database.
+
+Returns:
+    None
+
+Usage:
+    Run this script with three arguments: username, password,
+    and database name.
+    For example: python3 script.py username password hbtn_0e_6_usa
+
+Requirements:
+    - SQLAlchemy module must be installed.
+    - State and Base classes must be imported from model_state module.
+    - The script connects to a MySQL server running on localhost at port 3306.
+    - Results are sorted in ascending order by states.id.
+    - Results are displayed as follows: "<state.id>: <state.name>".
+
+Note:
+    The code is not executed when imported.
+"""
+
 if __name__ == "__main__":
 
     from sqlalchemy import create_engine
@@ -21,6 +48,6 @@ if __name__ == "__main__":
 
     output = session.query(State).order_by(State.id).all()
     for state in output:
-        print("{}:{}".format(state.id, state.name))
+        print("{}: {}".format(state.id, state.name))
 
     session.close()
