@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 Script to list all City objects from the database hbtn_0e_101_usa.
 
