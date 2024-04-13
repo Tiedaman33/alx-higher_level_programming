@@ -27,27 +27,22 @@ Note:
     The code is not executed when imported.
 """
 
+import sys
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model_state import State
+
 if __name__ == "__main__":
-
-    from sqlalchemy import create_engine
-    from sqlalchemy.ext.declarative import declarative_base
-    from sqlalchemy.orm import sessionmaker
-    import sys
-    from model_state import Base, State
-
-    inp = sys.argv
-    if len(inp) < 4:
-        exit(1)
-    conn_str = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
-    engine = create_engine(conn_str.format(inp[1], inp[2], inp[3]))
+    # Create the SQLAlchemy engine using the provided MySQL credentials
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
+    # Create a session factory
     Session = sessionmaker(bind=engine)
 
-    Base.metadata.create_all(engine)
-
+    # Create a session object
     session = Session()
 
-    output = session.query(State).order_by(State.id).all()
-    for state in output:
+    # Retrieve all states from the database and print their IDs and names
+    for state in session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
-
-    session.close()
