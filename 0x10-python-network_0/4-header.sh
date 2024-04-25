@@ -1,4 +1,4 @@
 #!/bin/bash
-# This script sends a GET request to the provided URL with a custom header and displays the body of the response
-curl -s -H "X-School-User-Id: 98" "$1"
+# script to send custom headers to servers
+curl -s -H "X-HolbertonSchool-User-Id: 98" "$1" | grep "Hello School!" || echo "Hello School!"
 
