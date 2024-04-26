@@ -6,7 +6,7 @@ import requests
 import sys
 
 
-if __name__ == "__miain__":
+if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
 
